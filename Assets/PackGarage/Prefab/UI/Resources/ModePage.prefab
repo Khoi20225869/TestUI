@@ -144,7 +144,7 @@ MonoBehaviour:
   _modeButtonPrefab: {fileID: 3871281816265048558, guid: c304d38a2f9bfdb46844d2897297973f,
     type: 3}
   _content: {fileID: 1292495914182626400}
-  _soData: {fileID: 11400000, guid: 1774affa94947de499699374dbf87dd1, type: 2}
+  _soData: {fileID: 11400000, guid: e59ca2017e459204482f1efc93e99847, type: 2}
 --- !u!1 &4660840754623376492
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,14 +46,15 @@ public class LevelPage : Page
             var btn = go.GetComponent<Button>();
 
             int level = i;
-            string sceneAddress = _mode.levelSceneAddresses[level - 1];
+            /*string sceneAddress = _mode.levelSceneAddresses[level - 1];
             btn.onClick.AddListener(() =>
             {
-                /*StartCoroutine(LoadMapScene(sceneAddress));*/
+                /*StartCoroutine(LoadMapScene(sceneAddress));#1#
                 OnLevelButtonClicked(sceneAddress).Forget();
 
-            });
-            yield return null;  
+            });*/
+            
+            yield return new WaitForSeconds(0.2f);  
         }
     }
 

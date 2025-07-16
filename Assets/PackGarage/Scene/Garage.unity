@@ -392,7 +392,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 0
-  orthographic size: 2.5994127
+  orthographic size: 2.7499998
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -741,7 +741,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.6
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -805,7 +805,7 @@ MonoBehaviour:
   uiRectTransform: {fileID: 1360920437}
   canvas: {fileID: 1360920436}
   canvasScaler: {fileID: 1360920435}
-  ratio: {x: 19, y: 9}
+  ratio: {x: 11, y: 9}
   deviceScreenRatioScales:
   - name: 12:9
     ratio: {x: 12, y: 9}
