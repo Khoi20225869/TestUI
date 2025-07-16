@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d8a909b28be22e4785e347c9e38c381, type: 3}
+  m_Name: ModeLevel
+  m_EditorClassIdentifier: 
+  Modes:
+  - mode: 0
+    totalLevel: 40
+    icon: {fileID: 21300000, guid: 667cd7b479e06f44682455bc90746d31, type: 3}
+    levelSceneAddresses: []
+  - mode: 1
+    totalLevel: 10
+    icon: {fileID: 21300000, guid: 9c8bbabc829053c4b909ae33741572ce, type: 3}
+    levelSceneAddresses: []
+  - mode: 2
+    totalLevel: 10
+    icon: {fileID: 21300000, guid: 1f9807536def0664db1c1c33fdb5aab1, type: 3}
+    levelSceneAddresses: []
+  - mode: 3
+    totalLevel: 0
+    icon: {fileID: 21300000, guid: 57758ea3f387a7f42b00da669aeee464, type: 3}
+    levelSceneAddresses: []
