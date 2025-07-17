@@ -1,20 +1,19 @@
 ﻿using UnityEngine;
 using UnityScreenNavigator.Runtime.Core.Page;
+using UnityScreenNavigator.Runtime.Core.Modal;
 using System.Collections;
 
 public class EntryPoint : MonoBehaviour
 {
     public PageContainer _pageContainer;
     
-    public void Start()
+    private void Start()
     {
-        StartCoroutine(ShowMainPage());
+        StartCoroutine(PushGaragePage());
     }
 
-    IEnumerator ShowMainPage()
+    private IEnumerator PushGaragePage()
     {
-        Debug.Log(">> Bắt đầu Push MainPage");
         yield return _pageContainer.Push("GaragePage9", true);
-        Debug.Log(">> MainPage đã được hiển thị");
     }
 }

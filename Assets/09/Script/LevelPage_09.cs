@@ -16,17 +16,20 @@ public class LevelPage_09 : Page
     [SerializeField] private GameObject _levelButtonPrefab;
 
     [Header("Layout Settings")]
-    [SerializeField] private int _ROW = 2; // 2 hàng
-    [SerializeField] private int _COLUMN = 6; // 6 cột
+    [SerializeField] private int _ROW = 2;
+    [SerializeField] private int _COLUMN = 6;
     private int pageSize => _ROW * _COLUMN;
 
     [Header("UI")]
     [SerializeField] private Button _backBtn;
+    [SerializeField] private Button _taskBtn;
+
+    [Header("Effect")]
+    [SerializeField] private float spawnButtonDelay = 0.07f; 
 
     private int _totalLevel;
     private int _totalPage;
     private Dictionary<int, Transform> _pageContents = new Dictionary<int, Transform>();
-    private HashSet<int> _spawnedPages = new HashSet<int>();
 
     public override IEnumerator Initialize()
     {
@@ -35,6 +38,13 @@ public class LevelPage_09 : Page
             _backBtn.onClick.RemoveAllListeners();
             _backBtn.onClick.AddListener(OnBackClicked);
         }
+
+        if (_taskBtn != null)
+        {
+            _taskBtn.onClick.RemoveAllListeners();
+            _taskBtn.onClick.AddListener(OnTaskSelected);
+        }
+
         yield break;
     }
 
@@ -43,10 +53,6 @@ public class LevelPage_09 : Page
         _totalLevel = mode.totalLevel;
         _totalPage = Mathf.CeilToInt((float)_totalLevel / pageSize);
 
-        _pageContents.Clear();
-        _spawnedPages.Clear();
-
-        // Tạo panel và lưu Content
         for (int i = 0; i < _totalPage; i++)
         {
             var panelGO = _dynamic.Add(i);
@@ -64,58 +70,10 @@ public class LevelPage_09 : Page
             _pageContents[i] = content;
         }
 
-        _scrollSnap.OnPanelSelected.RemoveAllListeners();
-        _scrollSnap.OnPanelSelected.AddListener(TrySpawnLevelItems);
+        for(int i = 0; i < _totalPage;i++) StartCoroutine(SpawnLevelItems(i));
 
-        // Sinh page đầu
-        TrySpawnLevelItems(0);
         _scrollSnap.GoToPanel(0);
     }
-    
-    private void TrySpawnLevelItems(int panelIndex)
-    {
-        // 1. Luôn spawn cho panel được chọn
-        if (!_spawnedPages.Contains(panelIndex))
-        {
-            StartCoroutine(SpawnLevelItems(panelIndex));
-            _spawnedPages.Add(panelIndex);
-        }
-
-        // 2. Spawn trước cho panel trước và sau (preload)
-        int[] preload = { panelIndex - 1, panelIndex + 1 };
-        foreach (var i in preload)
-        {
-            if (i >= 0 && i < _totalPage && !_spawnedPages.Contains(i))
-            {
-                StartCoroutine(SpawnLevelItems(i));
-                _spawnedPages.Add(i);
-            }
-        }
-
-        // 3. XÓA các page KHÔNG phải page hiện tại hoặc hai page liền kề
-        for (int i = 0; i < _totalPage; i++)
-        {
-            if (i == panelIndex || i == panelIndex - 1 || i == panelIndex + 1)
-                continue; // giữ lại 3 page này
-
-            if (_spawnedPages.Contains(i))
-            {
-                // Xóa toàn bộ button của page i
-                if (_pageContents.TryGetValue(i, out var content))
-                {
-                    for (int j = content.childCount - 1; j >= 0; j--)
-                    {
-                        Destroy(content.GetChild(j).gameObject);
-                    }
-                }
-                _spawnedPages.Remove(i);
-            }
-        }
-    }
-
-
-    [Header("Effect")]
-    [SerializeField] private float spawnButtonDelay = 0.07f; // xuất hiện từng cái
 
     private IEnumerator SpawnLevelItems(int panelIndex)
     {
@@ -150,7 +108,7 @@ public class LevelPage_09 : Page
                 Debug.LogError("LevelItem_09 prefab thiếu Button reference!");
             }
 
-            yield return new WaitForSeconds(spawnButtonDelay);
+            yield return new WaitForSeconds(spawnButtonDelay); 
         }
     }
 
@@ -163,5 +121,10 @@ public class LevelPage_09 : Page
     private void OnBackClicked()
     {
         StartCoroutine(PageContainer.Of(transform).Pop(true));
+    }
+
+    private void OnTaskSelected()
+    {
+        StartCoroutine(PageContainer.Of(transform).Push("MissionModal9", true));
     }
 }

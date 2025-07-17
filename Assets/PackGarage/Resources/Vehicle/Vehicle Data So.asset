@@ -16,7 +16,7 @@ MonoBehaviour:
   - vehicleSaveName: K1
     vehicle: {fileID: 6697505448432191494, guid: a885c23931fa8c742b4c82c9e44580a4,
       type: 3}
-    vehicleImage: {fileID: 21300000, guid: 885a03117ee3963479ffcd110d9d3c23, type: 3}
+    vehicleImage: {fileID: 1504001133, guid: 11e27d70b09d4fd49bd223ba150ba9b5, type: 3}
     collectType: 2
     engineTorque: 0
     handling: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
   - vehicleSaveName: K2
     vehicle: {fileID: 1151418499198769441, guid: 59db60d980e0a9146b5fc53d34b0f155,
       type: 3}
-    vehicleImage: {fileID: 21300000, guid: 526e0eb334493eb469ba6cd96cfe7b05, type: 3}
+    vehicleImage: {fileID: 1504001133, guid: 11e27d70b09d4fd49bd223ba150ba9b5, type: 3}
     collectType: 0
     engineTorque: 0
     handling: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
   - vehicleSaveName: K3
     vehicle: {fileID: 8242985462836129879, guid: 4225e87ca885be446aa08a8a9b18ef8a,
       type: 3}
-    vehicleImage: {fileID: 21300000, guid: 9351405a73b64fb4d80cf58451f67e46, type: 3}
+    vehicleImage: {fileID: 1504001133, guid: 11e27d70b09d4fd49bd223ba150ba9b5, type: 3}
     collectType: 0
     engineTorque: 0
     handling: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
   - vehicleSaveName: K4
     vehicle: {fileID: 8543204285537558608, guid: cc12b6e0ea526034aba680347353600c,
       type: 3}
-    vehicleImage: {fileID: 21300000, guid: 233838988a517d844aa0a10b96cf6426, type: 3}
+    vehicleImage: {fileID: 1504001133, guid: 11e27d70b09d4fd49bd223ba150ba9b5, type: 3}
     collectType: 1
     engineTorque: 0
     handling: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   - vehicleSaveName: K5
     vehicle: {fileID: 8543204285537558608, guid: cc12b6e0ea526034aba680347353600c,
       type: 3}
-    vehicleImage: {fileID: 21300000, guid: 233838988a517d844aa0a10b96cf6426, type: 3}
+    vehicleImage: {fileID: 1504001133, guid: 11e27d70b09d4fd49bd223ba150ba9b5, type: 3}
     collectType: 1
     engineTorque: 0
     handling: 0

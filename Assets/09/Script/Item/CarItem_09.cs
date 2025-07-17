@@ -19,20 +19,19 @@ public class CarItem_09 : MonoBehaviour
         _carIcon.sprite = vehicle.vehicleImage;
         _index = index;
 
-        bool unlocked = PlayerPrefs.GetInt(vehicle.vehicleSaveName, 0) == 1;
+        int unlocked = PlayerData.GetCarUnlockStatus(index);
         bool checkPrice = vehicle.collectType == VehicleCollectType.Free;
 
         if (checkPrice)
         {
-            unlocked = true;
-            PlayerPrefs.SetInt(vehicle.vehicleSaveName, 1);
+            unlocked = 1;
+            PlayerData.SetCarUnlockStatus(index);
         }
 
-        _lockIcon.SetActive(!unlocked);
-        _lockBg.SetActive(!unlocked);
+        _lockIcon.SetActive(unlocked != 1);
+        _lockBg.SetActive(unlocked != 1);
 
         _carItemBtn.onClick.RemoveAllListeners();
-        
         _carItemBtn.onClick.AddListener(() => _onSelected?.Invoke(_index));
         
         _onSelected += OnSelected;
@@ -44,6 +43,8 @@ public class CarItem_09 : MonoBehaviour
         _scaleTween?.Kill();
         _scaleTween = transform.DOScale(_originalScale * 1.2f, 0.3f).SetEase(Ease.OutBack);
         GaragePage_09._currentItem = this;
+        if (PlayerData.GetCarUnlockStatus(index) == 1)
+            PlayerData.SetCurrentCarIndex(index);
     }
     
     public void Unselect()
@@ -52,10 +53,18 @@ public class CarItem_09 : MonoBehaviour
         _scaleTween = transform.DOScale(_originalScale, 0.25f).SetEase(Ease.InOutSine);
     }
 
-    public void Open()
+    public void Open(int index)
     {
         _lockIcon.SetActive(false);
         _lockBg.SetActive(false);
+        PlayerData.SetCarUnlockStatus(index);
+        PlayerData.SetCurrentCarIndex(index);
+    }
+    
+    public void OnSelectedImmediate()
+    {
+        _scaleTween?.Kill();
+        _scaleTween = transform.DOScale(_originalScale * 1.2f, 0.3f).SetEase(Ease.OutBack);
     }
 }    
 

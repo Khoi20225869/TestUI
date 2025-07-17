@@ -15,17 +15,17 @@ MonoBehaviour:
   Modes:
   - mode: 0
     totalLevel: 40
-    icon: {fileID: 21300000, guid: 667cd7b479e06f44682455bc90746d31, type: 3}
+    icon: {fileID: 21300000, guid: 020aa307418230b48877e8e4646c3eb6, type: 3}
     levelSceneAddresses: []
   - mode: 1
     totalLevel: 10
-    icon: {fileID: 21300000, guid: 9c8bbabc829053c4b909ae33741572ce, type: 3}
+    icon: {fileID: 21300000, guid: 089c638705d6a744eb25b2639c90c26a, type: 3}
     levelSceneAddresses: []
   - mode: 2
     totalLevel: 10
-    icon: {fileID: 21300000, guid: 1f9807536def0664db1c1c33fdb5aab1, type: 3}
+    icon: {fileID: 21300000, guid: 94209312f627cd344b6b23d6c70da959, type: 3}
     levelSceneAddresses: []
   - mode: 3
     totalLevel: 0
-    icon: {fileID: 21300000, guid: 57758ea3f387a7f42b00da669aeee464, type: 3}
+    icon: {fileID: 21300000, guid: a54e7584c6d82ca4fade071f9eb8c700, type: 3}
     levelSceneAddresses: []

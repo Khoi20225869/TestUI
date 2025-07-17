@@ -73,8 +73,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -248.38382, y: 0}
-  m_SizeDelta: {x: -556.76764, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -69.999985, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5788496820246668169
 CanvasRenderer:
@@ -221,6 +221,7 @@ MonoBehaviour:
   _playBtn: {fileID: 5080220954169815183}
   _customizeBtn: {fileID: 6895070150630636793}
   _purchaseBtn: {fileID: 3690009581317950106}
+  _taskBtn: {fileID: 7852694449695718103}
 --- !u!1 &4398787601001960839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,8 +1025,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -268.03522, y: 105.013466}
-  m_SizeDelta: {x: 457.6655, y: 145.1641}
+  m_AnchoredPosition: {x: -370, y: 326}
+  m_SizeDelta: {x: 558.0624, y: 111.652}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3174696245747012681
 CanvasRenderer:
@@ -1534,6 +1535,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 249e6f8922888db4c8f96c7a2ff038c2, type: 3}
+--- !u!114 &7852694449695718103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 788024600986908723, guid: 249e6f8922888db4c8f96c7a2ff038c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7356066818888073956}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7888231619854818269 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 823418835186997561, guid: 249e6f8922888db4c8f96c7a2ff038c2,

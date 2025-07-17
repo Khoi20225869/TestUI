@@ -18,4 +18,8 @@ public class KeySave : ScriptableObject
     [Header("PlayerPrefs Save/Load Keys")]
     public string playerPrefsPlayerMoney = "Money";
     public string playerPrefsPlayerVehicle = "Vehicle";
+    public string playerPrefsPlayerVehicleUnlock = "VehicleUnlock";
+    public string playerPrefsPlayerAchievementProgress = "ProgressAchievement";
+    public string playerPrefsPlayerLevelOfModeCurrent = "CurrentLevelOfMode";
+    public string playerPrefsPlayerStatusOfDetailLevelInMode = "StatusOfDetailLevelInMode";
 }

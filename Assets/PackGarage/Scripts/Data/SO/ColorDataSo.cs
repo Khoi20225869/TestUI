@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "Game/Color Data")]
 public class ColorDataSo : ScriptableObject
 {
+    public Sprite icon;
     public ColorDetail[] colors;
 
     [System.Serializable]

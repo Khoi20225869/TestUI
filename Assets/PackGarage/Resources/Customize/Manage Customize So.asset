@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e06225583eda16540b8945b2855c8332, type: 3}
+  m_Name: Manage Customize So
+  m_EditorClassIdentifier: 
+  colorDataSo: {fileID: 11400000, guid: 8840627800abed24e9f410b4527d59e5, type: 2}
+  wheelDataSo: {fileID: 11400000, guid: 5900b97c79d00f241bd5e9082b0210df, type: 2}
