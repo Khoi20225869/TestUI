@@ -1,1 +1,0 @@
-This integration package includes a new SGS_PlayerVehicles list with RCCP demo content vehicles. If your project has RCCP demo content, you can import this integration package to have all demo vehicles. If your project doesn't have RCCP demo content, you can import them from Tools --> BCG --> RCCP --> Welcome Window --> Addons.

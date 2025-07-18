@@ -5,18 +5,25 @@ using UnityEngine;
 
 public class CustomizePage_09 : Page
 {
-    [SerializeField] private ManageCustomizeSo _soData;
-    [SerializeField] private Button _backBtn;
-    [SerializeField] private GameObject _itemPrefab;
-    [SerializeField] private GameObject _optionPrefab;
-    [SerializeField] private Transform _optionContent;
-    [SerializeField] private Transform _itemContent;
+    [SerializeField] private Button backBtn;
+    [SerializeField] private Button _taskBtn;
+    [SerializeField] private GameObject optionPrefab;
+    [SerializeField] private Transform optionContent;
+    [SerializeField] private Transform itemContent;
+    
+    public static int CurrentOptionIndex = 0;
     public override IEnumerator Initialize()
     {
-        if (_backBtn != null)
+        if (backBtn != null)
         {
-            _backBtn.onClick.RemoveAllListeners();
-            _backBtn.onClick.AddListener(OnBackButtonClicked);
+            backBtn.onClick.RemoveAllListeners();
+            backBtn.onClick.AddListener(OnBackButtonClicked);
+        }
+        
+        if (_taskBtn != null)
+        {
+            _taskBtn.onClick.RemoveAllListeners();
+            _taskBtn.onClick.AddListener(OnTaskSelected);
         }
         
         yield break;
@@ -25,24 +32,32 @@ public class CustomizePage_09 : Page
     public override void DidPushEnter()
     {
         base.DidPushEnter();
-        //StartCoroutine(SpawnOptions());
+        StartCoroutine(SpawnOptions());
     }
 
-    /*private IEnumerator SpawnOptions()
+    private IEnumerator SpawnOptions()
     {
-        foreach (Transform child in _optionContent)
+        foreach (Transform child in optionContent)
             Destroy(child.gameObject);
 
-        for (int i = 0; i < _soData.totalOption; i++)
+        for (var i = 0; i < ManageCustomizeSo.Instance.totalOption; i++)
         {
-            var go = Instantiate(_optionPrefab, _optionContent);
-            
+            var index = i;
+            var go = Instantiate(optionPrefab, optionContent);
+            var item = go.GetComponent<CustomizeOption_09>();
+            item.Setup(index, itemContent);
             yield return new WaitForSeconds(0.2f);
         }
-    }*/
+    }
     private void OnBackButtonClicked()
     {
         StopAllCoroutines();
-        StartCoroutine(PageContainer.Of(transform).Pop(false));
+        StartCoroutine(PageContainer.Of(transform).Pop(true));
+    }
+    
+    private void OnTaskSelected()
+    {
+        StopAllCoroutines();
+        StartCoroutine(PageContainer.Of(transform).Push("MissionModal9", true));
     }
 }

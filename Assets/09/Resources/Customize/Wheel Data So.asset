@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e2d2d6433dbbd94583d3cdb6343979e, type: 3}
+  m_Name: Wheel Data So
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 21300000, guid: 40fb43ff0162c55428a4dbecd325e461, type: 3}
+  wheels:
+  - wheel: {fileID: 5975082182234156212, guid: dd0ede335cfb38643a166db0fdf93cf6, type: 3}
+    wheelImage: {fileID: 21300000, guid: 5d3c492ce84456d48b30b9a50170bd0d, type: 3}
+    type: 1
+    price: 0
+    piece: 0
+  - wheel: {fileID: 5142865213078076274, guid: 0461c2bf6baf4c144a3c0f22677740e2, type: 3}
+    wheelImage: {fileID: 21300000, guid: 9be0537aa0ec7f64c88cdcfa9fb7ea9e, type: 3}
+    type: 1
+    price: 0
+    piece: 0
+  - wheel: {fileID: 6925761167308941991, guid: b5618fbb3ee77244f939057a7254562d, type: 3}
+    wheelImage: {fileID: 21300000, guid: 536696dc23077dc4aa5f9a31ab3f070c, type: 3}
+    type: 1
+    price: 0
+    piece: 0
+  - wheel: {fileID: 607510687984719422, guid: 7a68662bb3739c946869ca7f149ea5c8, type: 3}
+    wheelImage: {fileID: 21300000, guid: 59dc5167f4107bf4c9f68a7fca698344, type: 3}
+    type: 1
+    price: 0
+    piece: 0
+  - wheel: {fileID: 3467142483786165428, guid: 5fded020882c25847b7ed51211fc862b, type: 3}
+    wheelImage: {fileID: 21300000, guid: 5ab6544f29c175a4e8b201b469224f3f, type: 3}
+    type: 1
+    price: 0
+    piece: 0
+  - wheel: {fileID: 1802391492021223789, guid: 294bdf0edf1eccc4392a9b51782fc602, type: 3}
+    wheelImage: {fileID: 21300000, guid: c412487cabf3ef3448c610688a9b924a, type: 3}
+    type: 1
+    price: 0
+    piece: 0
+  - wheel: {fileID: 6601395529236736201, guid: b11f627bc344ec54fa69981c598b5b39, type: 3}
+    wheelImage: {fileID: 21300000, guid: 8619e84cd94d32f49b67b129eadfe216, type: 3}
+    type: 1
+    price: 0
+    piece: 0

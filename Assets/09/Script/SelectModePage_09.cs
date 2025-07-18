@@ -35,7 +35,7 @@ public class SelectModePage_09 : Page
     }
     
     
-    public IEnumerator SpawnModes()
+    private IEnumerator SpawnModes()
     {
         foreach (var mode in _soData.Modes)
         {
@@ -54,6 +54,7 @@ public class SelectModePage_09 : Page
     {
         Debug.Log("Nhấn Back!");
         StartCoroutine(PageContainer.Of(transform).Pop(true));
+        VehicleManager.Instance.SpawnVehicle(PlayerData.GetCurrentCarIndex(), false);
     }
 
     private void OnClickMode(ModePageSoData.Mode mode)

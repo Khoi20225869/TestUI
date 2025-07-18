@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa086440c2b96b248976e0855e51410e, type: 3}
+  m_Name: Vehicle Data So
+  m_EditorClassIdentifier: 
+  vehicles:
+  - vehicleSaveName: K1
+    vehicle: {fileID: 6804836609640065414, guid: 23a5308d509de3748b77686fd13e3b58,
+      type: 3}
+    vehicleImage: {fileID: 21300000, guid: 885a03117ee3963479ffcd110d9d3c23, type: 3}
+    collectType: 2
+    engineTorque: 0
+    handling: 0
+    speed: 0
+    upgradedEngineEfficiency: 0
+    upgradedHandlingEfficiency: 0
+    upgradedSpeedEfficiency: 0
+    price: 0
+    pieceCount: 0
+  - vehicleSaveName: K2
+    vehicle: {fileID: 6550788271043903014, guid: ae08f062cf934d54ca3e195dc434d6a4,
+      type: 3}
+    vehicleImage: {fileID: 21300000, guid: 786b32ad4c855f247bbfbed7ead5d840, type: 3}
+    collectType: 0
+    engineTorque: 0
+    handling: 0
+    speed: 0
+    upgradedEngineEfficiency: 0
+    upgradedHandlingEfficiency: 0
+    upgradedSpeedEfficiency: 0
+    price: 0
+    pieceCount: 0
+  - vehicleSaveName: K3
+    vehicle: {fileID: 2158872005974176057, guid: f8c6a02ddfc38934d9bdf4dbc697e703,
+      type: 3}
+    vehicleImage: {fileID: 21300000, guid: 40fb43ff0162c55428a4dbecd325e461, type: 3}
+    collectType: 0
+    engineTorque: 0
+    handling: 0
+    speed: 0
+    upgradedEngineEfficiency: 0
+    upgradedHandlingEfficiency: 0
+    upgradedSpeedEfficiency: 0
+    price: 0
+    pieceCount: 0
+  - vehicleSaveName: K4
+    vehicle: {fileID: 828392474960418027, guid: 3e0344160175f04449e7c2b681e1d2c8,
+      type: 3}
+    vehicleImage: {fileID: 21300000, guid: 5173c172723d98a4fa2f763ed02363a2, type: 3}
+    collectType: 1
+    engineTorque: 0
+    handling: 0
+    speed: 0
+    upgradedEngineEfficiency: 0
+    upgradedHandlingEfficiency: 0
+    upgradedSpeedEfficiency: 0
+    price: 1000
+    pieceCount: 0

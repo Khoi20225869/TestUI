@@ -6,7 +6,6 @@ using UnityEngine;
 public class GaragePage_09 : Page
 {
     [Header("Data")]
-    [SerializeField] private VehicleDataSo _soData;
     [SerializeField] private GameObject _carItemPrefab;
     [SerializeField] private Transform _carContent;
 
@@ -60,22 +59,20 @@ public class GaragePage_09 : Page
             Destroy(c.gameObject);
 
         CarItem_09 firstItem = null;
-        for (int i = 0; i < _soData.vehicles.Length; i++)
+        for (int i = 0; i < VehicleDataSo.Instance.vehicles.Length; i++)
         {
-            var vehicle = _soData.vehicles[i];
+            var vehicle = VehicleDataSo.Instance.vehicles[i];
             var go = Instantiate(_carItemPrefab, _carContent);
             var item = go.GetComponent<CarItem_09>();
             item.Instantiate(vehicle, i, OnItemSelected);
 
             if (i == PlayerData.GetCurrentCarIndex()) firstItem = item;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.05f);
         }
-        
-        if (firstItem != null)
-        {
-            _currentItem = firstItem;
-            firstItem.OnSelectedImmediate();
-        }
+
+        if (firstItem == null) yield break;
+        _currentItem = firstItem;
+        firstItem.OnSelectedImmediate();
     }
 
 
@@ -85,6 +82,7 @@ public class GaragePage_09 : Page
         foreach (Transform c in _carContent)
             Destroy(c.gameObject);
         StartCoroutine(PageContainer.Of(transform).Push("SelectModePage9", true));
+        VehicleManager.Instance.DestroyCar();
     }
 
     private void OnCustomizeClicked()
@@ -92,7 +90,8 @@ public class GaragePage_09 : Page
         StopAllCoroutines();
         foreach (Transform c in _carContent)
             Destroy(c.gameObject);
-        StartCoroutine(PageContainer.Of(transform).Push("CustomizePage9", false));
+        
+        StartCoroutine(PageContainer.Of(transform).Push("CustomizePage9", true));
     }
     
     private void OnItemSelected(int index)
@@ -103,8 +102,7 @@ public class GaragePage_09 : Page
     private void OnTaskSelected()
     {
         StopAllCoroutines();
-        foreach (Transform c in _carContent)
-            Destroy(c.gameObject);
+
         StartCoroutine(PageContainer.Of(transform).Push("MissionModal9", true));
     }
 }
