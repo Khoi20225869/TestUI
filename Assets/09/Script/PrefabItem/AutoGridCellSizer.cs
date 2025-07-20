@@ -10,21 +10,21 @@ public class ResponsiveGridCellSizer : MonoBehaviour
     public float minCellWidth = 80f;
     public float minCellHeight = 80f;
 
-    private GridLayoutGroup grid;
-    private RectTransform panelRect;
+    private GridLayoutGroup _grid;
+    private RectTransform _panelRect;
 
     void Awake()
     {
-        grid = GetComponent<GridLayoutGroup>();
-        panelRect = transform.parent as RectTransform;
+        _grid = GetComponent<GridLayoutGroup>();
+        _panelRect = transform.parent as RectTransform;
         UpdateCellSize();
     }
 
     void OnEnable()
     {
-        if (grid == null) grid = GetComponent<GridLayoutGroup>();
-        if (panelRect == null)
-            panelRect = transform.parent as RectTransform;
+        if (_grid == null) _grid = GetComponent<GridLayoutGroup>();
+        if (_panelRect == null)
+            _panelRect = transform.parent as RectTransform;
         UpdateCellSize();
     }
 
@@ -42,14 +42,14 @@ public class ResponsiveGridCellSizer : MonoBehaviour
 
     public void UpdateCellSize()
     {
-        if (panelRect == null || grid == null || maxColumns <= 0 || maxRows <= 0) return;
+        if (_panelRect == null || _grid == null || maxColumns <= 0 || maxRows <= 0) return;
 
-        float totalWidth = panelRect.rect.width;
-        float totalHeight = panelRect.rect.height;
-        float spacingX = grid.spacing.x;
-        float spacingY = grid.spacing.y;
-        float paddingX = grid.padding.left + grid.padding.right;
-        float paddingY = grid.padding.top + grid.padding.bottom;
+        float totalWidth = _panelRect.rect.width;
+        float totalHeight = _panelRect.rect.height;
+        float spacingX = _grid.spacing.x;
+        float spacingY = _grid.spacing.y;
+        float paddingX = _grid.padding.left + _grid.padding.right;
+        float paddingY = _grid.padding.top + _grid.padding.bottom;
 
         int columns = maxColumns;
         int rows = maxRows;
@@ -72,12 +72,12 @@ public class ResponsiveGridCellSizer : MonoBehaviour
         }
 
         // Gán lại số cột (chỉ nên dùng Fixed Column Count hoặc Fixed Row Count)
-        grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
-        grid.constraintCount = columns;
+        _grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+        _grid.constraintCount = columns;
 
         cellWidth = (totalWidth - paddingX - spacingX * (columns - 1)) / columns;
         cellHeight = (totalHeight - paddingY - spacingY * (rows - 1)) / rows;
 
-        grid.cellSize = new Vector2(cellWidth, cellHeight);
+        _grid.cellSize = new Vector2(cellWidth, cellHeight);
     }
 }

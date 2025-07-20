@@ -600,16 +600,16 @@ MonoBehaviour:
     _pushExitAnimations: []
     _popEnterAnimations: []
     _popExitAnimations: []
-  _scrollSnap: {fileID: 1431569119032539320}
-  _dynamic: {fileID: 8865887954995929130}
-  _panelPrefab: {fileID: 1066329051684300, guid: 654e858084003f34a99d4dc4335e6fe0,
+  scrollSnap: {fileID: 1431569119032539320}
+  dynamic: {fileID: 8865887954995929130}
+  panelPrefab: {fileID: 1066329051684300, guid: 654e858084003f34a99d4dc4335e6fe0,
     type: 3}
-  _levelButtonPrefab: {fileID: 7755550611009438977, guid: a01ea81c2d5d9cb4eb8d8fe3ba7f56d9,
+  levelButtonPrefab: {fileID: 7755550611009438977, guid: a01ea81c2d5d9cb4eb8d8fe3ba7f56d9,
     type: 3}
-  _ROW: 2
-  _COLUMN: 6
-  _backBtn: {fileID: 650750314379689740}
-  _taskBtn: {fileID: 6000821335805050306}
+  row: 2
+  column: 6
+  backBtn: {fileID: 650750314379689740}
+  taskBtn: {fileID: 6000821335805050306}
   spawnButtonDelay: 0.07
 --- !u!1 &4188209207403048994
 GameObject:

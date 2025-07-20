@@ -635,14 +635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9493e2d49254c4c9c25496fee8bbd16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _btnImage: {fileID: 7710855898120475736}
-  _txtLevel: {fileID: 346183635936792593}
-  _btnOn:
-  - {fileID: 3371117899698574432}
-  - {fileID: 393776884218361381}
-  - {fileID: 4959075147850626656}
-  _btnOff:
-  - {fileID: 3371117899698574432}
-  - {fileID: 393776884218361381}
-  - {fileID: 4959075147850626656}
-  _button: {fileID: 88602783832866988}
+  btnImage: {fileID: 6439618289773856369}
+  txtLevel: {fileID: 346183635936792593}
+  btnOn: []
+  btnOff: []
+  button: {fileID: 88602783832866988}

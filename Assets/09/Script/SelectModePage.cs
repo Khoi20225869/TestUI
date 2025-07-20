@@ -3,26 +3,26 @@ using UnityEngine.UI;
 using UnityScreenNavigator.Runtime.Core.Page;
 using UnityEngine;
 
-public class SelectModePage_09 : Page
+public class SelectModePage : Page
 {
-    [SerializeField] private GameObject _modeButtonPrefab;
-    [SerializeField] private Button _backBtn;
-    [SerializeField] private Button _taskBtn;
-    [SerializeField] private Transform _content;
-    [SerializeField] private ModePageSoData _soData;
+    [SerializeField] private GameObject modeButtonPrefab;
+    [SerializeField] private Button backBtn;
+    [SerializeField] private Button taskBtn;
+    [SerializeField] private Transform content;
+    [SerializeField] private ModePageSoData soData;
 
     public override IEnumerator Initialize()
     {
-        if (_backBtn != null)
+        if (backBtn != null)
         {
-            _backBtn.onClick.RemoveAllListeners();
-            _backBtn.onClick.AddListener(OnBackClicked);
+            backBtn.onClick.RemoveAllListeners();
+            backBtn.onClick.AddListener(OnBackClicked);
         }
 
-        if (_taskBtn != null)
+        if (taskBtn != null)
         {
-            _taskBtn.onClick.RemoveAllListeners();
-            _taskBtn.onClick.AddListener(OnTaskSelected);
+            taskBtn.onClick.RemoveAllListeners();
+            taskBtn.onClick.AddListener(OnTaskSelected);
         }
 
         yield break;
@@ -37,9 +37,9 @@ public class SelectModePage_09 : Page
     
     private IEnumerator SpawnModes()
     {
-        foreach (var mode in _soData.Modes)
+        foreach (var mode in soData.Modes)
         {
-            var btn = Instantiate(_modeButtonPrefab, _content);
+            var btn = Instantiate(modeButtonPrefab, content);
             var image = btn.gameObject.GetComponent<Image>();
             var button = btn.GetComponent<Button>();
             
@@ -62,8 +62,8 @@ public class SelectModePage_09 : Page
         Debug.Log("Nhấn Click!");
         StartCoroutine(PageContainer.Of(transform).Push("LevelModePage9", true, onLoad : handle =>
         {
-            var page = handle.page as LevelPage_09;
-            page.SetupWithMode(mode);
+            var page = handle.page as LevelPage;
+            if (page != null) page.SetupWithMode(mode);
         }));
     }
     private void OnTaskSelected()

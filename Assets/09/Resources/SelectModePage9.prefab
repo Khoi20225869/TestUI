@@ -68,12 +68,12 @@ MonoBehaviour:
     _pushExitAnimations: []
     _popEnterAnimations: []
     _popExitAnimations: []
-  _modeButtonPrefab: {fileID: 7886030543956716473, guid: 65e037c8e1b8fd14aa9cb364d0121fcd,
+  modeButtonPrefab: {fileID: 7886030543956716473, guid: 65e037c8e1b8fd14aa9cb364d0121fcd,
     type: 3}
-  _backBtn: {fileID: 8863101214059461752}
-  _taskBtn: {fileID: 8692632231030648251}
-  _content: {fileID: 8812388008523698236}
-  _soData: {fileID: 11400000, guid: e59ca2017e459204482f1efc93e99847, type: 2}
+  backBtn: {fileID: 8863101214059461752}
+  taskBtn: {fileID: 8692632231030648251}
+  content: {fileID: 8812388008523698236}
+  soData: {fileID: 11400000, guid: e59ca2017e459204482f1efc93e99847, type: 2}
 --- !u!1 &6981129649763496720
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 609.1975, y: 787}
+  m_CellSize: {x: 657.1975, y: 877}
   m_Spacing: {x: -98.93, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 4

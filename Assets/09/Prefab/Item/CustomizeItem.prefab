@@ -138,6 +138,7 @@ MonoBehaviour:
   itemBtn: {fileID: 5012146535782072439}
   itemBgImage: {fileID: 7276407511619824684}
   itemImage: {fileID: 5806820140472548740}
+  itemLockImage: {fileID: 7088140097686273137}
 --- !u!1 &1694760265494853138
 GameObject:
   m_ObjectHideFlags: 0

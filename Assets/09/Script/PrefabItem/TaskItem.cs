@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using DG.Tweening;
 
-public class TaskItem_09 : MonoBehaviour
+public class TaskItem : MonoBehaviour
 {
     [SerializeField] private Button completeBtn;
     [SerializeField] private GameObject inCompleteObj;

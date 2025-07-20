@@ -3,13 +3,16 @@ using UnityEngine.UI;
 using UnityScreenNavigator.Runtime.Core.Page;
 using UnityEngine;
 
-public class CustomizePage_09 : Page
+public class CustomizePage : Page
 {
     [SerializeField] private Button backBtn;
-    [SerializeField] private Button _taskBtn;
+    [SerializeField] private Button taskBtn;
     [SerializeField] private GameObject optionPrefab;
     [SerializeField] private Transform optionContent;
     [SerializeField] private Transform itemContent;
+
+    [SerializeField] private Button purchaseByCoinBtn;
+    [SerializeField] private Button purchaseByAdsBtn;
     
     public static int CurrentOptionIndex = 0;
     public override IEnumerator Initialize()
@@ -20,12 +23,22 @@ public class CustomizePage_09 : Page
             backBtn.onClick.AddListener(OnBackButtonClicked);
         }
         
-        if (_taskBtn != null)
+        if (taskBtn != null)
         {
-            _taskBtn.onClick.RemoveAllListeners();
-            _taskBtn.onClick.AddListener(OnTaskSelected);
+            taskBtn.onClick.RemoveAllListeners();
+            taskBtn.onClick.AddListener(OnTaskSelected);
         }
-        
+
+        if (purchaseByCoinBtn != null)
+        {
+            purchaseByCoinBtn.onClick.RemoveAllListeners();
+        }
+
+        if (purchaseByAdsBtn != null)
+        {
+            purchaseByAdsBtn.onClick.RemoveAllListeners();
+        }
+
         yield break;
     }
     
@@ -44,8 +57,8 @@ public class CustomizePage_09 : Page
         {
             var index = i;
             var go = Instantiate(optionPrefab, optionContent);
-            var item = go.GetComponent<CustomizeOption_09>();
-            item.Setup(index, itemContent);
+            var item = go.GetComponent<CustomizeOption>();
+            item.Setup(index, itemContent, purchaseByCoinBtn, purchaseByAdsBtn);
             yield return new WaitForSeconds(0.2f);
         }
     }

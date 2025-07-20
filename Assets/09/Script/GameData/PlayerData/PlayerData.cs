@@ -2,6 +2,15 @@ using UnityEngine;
 
 public static class PlayerData 
 {
+    public static int GetSelectedCarIndex()
+    {
+        return PlayerPrefs.GetInt(KeySave.Instance.playerPrefsPlayerSelectedCar, 0);
+    }
+    
+    public static void SetSelectedCarIndex(int index)
+    {
+        PlayerPrefs.SetInt(KeySave.Instance.playerPrefsPlayerSelectedCar, index);
+    }
     public static int GetMoney()
     {
         return PlayerPrefs.GetInt(KeySave.Instance.playerPrefsPlayerMoney, 0);
@@ -75,5 +84,17 @@ public static class PlayerData
     public static void SetStatusOfDetailLevelInMode(string mode, int index, int status)
     {
         PlayerPrefs.SetInt(KeySave.Instance.playerPrefsPlayerStatusOfDetailLevelInMode + mode + index, status);
+    }
+    
+    //Customize
+    
+    public static int GetStatusCurrentItemCustomize(int index , int type)
+    {
+        return PlayerPrefs.GetInt(KeySave.Instance.playerPrefsPlayerCustomize + type + " " + index, 0);
+    }
+
+    public static void SetStatusCurrentItemCustomize(int index, int type)
+    {
+        PlayerPrefs.SetInt(KeySave.Instance.playerPrefsPlayerCustomize + type + " " + index, 1);
     }
 }

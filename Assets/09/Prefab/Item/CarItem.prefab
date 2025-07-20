@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4759e8531879c43b6b903d162834a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _carItemBtn: {fileID: 1568090405936114229}
-  _lockIcon: {fileID: 1795274085565035855}
-  _lockBg: {fileID: 4733443443820150790}
-  _carIcon: {fileID: 7953880598319604685}
+  carItemBtn: {fileID: 1568090405936114229}
+  lockIcon: {fileID: 1795274085565035855}
+  lockBg: {fileID: 4733443443820150790}
+  carIcon: {fileID: 7953880598319604685}

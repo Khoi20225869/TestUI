@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityScreenNavigator.Runtime.Core.Page;
 using UnityEngine;
@@ -7,20 +6,20 @@ using DG.Tweening;
 using Unity.VisualScripting;
 using Page = UnityScreenNavigator.Runtime.Core.Page.Page;
 
-public class TaskModal_09 : Page
+public class TaskModal : Page
 {
-    [SerializeField] private Button _backBtn;
-    [SerializeField] private AchievementDataSo _soData;
-    [SerializeField] private GameObject _taskItemPrefab;
-    [SerializeField] private Transform _content;
+    [SerializeField] private Button backBtn;
+    [SerializeField] private AchievementDataSo soData;
+    [SerializeField] private GameObject taskItemPrefab;
+    [SerializeField] private Transform content;
     
     
     public override IEnumerator Initialize()
     {
-        if(_backBtn != null)
+        if(backBtn != null)
         {
-            _backBtn.onClick.RemoveAllListeners();
-            _backBtn.onClick.AddListener(OnBackButtonClicked);
+            backBtn.onClick.RemoveAllListeners();
+            backBtn.onClick.AddListener(OnBackButtonClicked);
         }
 
         yield break;
@@ -28,7 +27,7 @@ public class TaskModal_09 : Page
 
     private void OnBackButtonClicked()
     {
-        foreach (Transform child in _content)
+        foreach (Transform child in content)
             DOTween.Kill(child);
         StopAllCoroutines();
         StartCoroutine(PageContainer.Of(transform).Pop(true));
@@ -42,21 +41,20 @@ public class TaskModal_09 : Page
 
     private IEnumerator SpawnTasks()
     {
-        foreach (var mission in _soData.missions)
+        foreach (var mission in soData.missions)
         {
-            var go = Instantiate(_taskItemPrefab, _content);
+            var go = Instantiate(taskItemPrefab, content);
             if (go == null || go.transform == null)
                 continue;
             
             go.transform.localScale = Vector3.one * 0.7f;
-            string objName = go.name;
             go.transform.DOScale(1f, 0.45f)
                 .SetEase(Ease.OutBack)
                 .SetTarget(go.transform)
                 .SetAutoKill(true);
             
-            var item = go.GetComponent<TaskItem_09>();
-            if (item == null) item.AddComponent<TaskItem_09>();
+            var item = go.GetComponent<TaskItem>();
+            if (item == null) item.AddComponent<TaskItem>();
             item.SetUp(mission);
     
             yield return new WaitForSeconds(0.2f);

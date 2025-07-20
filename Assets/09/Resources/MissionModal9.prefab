@@ -226,11 +226,11 @@ MonoBehaviour:
     _pushExitAnimations: []
     _popEnterAnimations: []
     _popExitAnimations: []
-  _backBtn: {fileID: 6048218071020171415}
-  _soData: {fileID: 11400000, guid: 49c0ceb9b5af349459996a4f0d62df56, type: 2}
-  _taskItemPrefab: {fileID: 5713982508991160341, guid: 4a3d766117dcd054bb7683fab7cf3efd,
+  backBtn: {fileID: 6048218071020171415}
+  soData: {fileID: 11400000, guid: 49c0ceb9b5af349459996a4f0d62df56, type: 2}
+  taskItemPrefab: {fileID: 5713982508991160341, guid: 4a3d766117dcd054bb7683fab7cf3efd,
     type: 3}
-  _content: {fileID: 30745076621867647}
+  content: {fileID: 30745076621867647}
 --- !u!1 &8135054443881418084
 GameObject:
   m_ObjectHideFlags: 0

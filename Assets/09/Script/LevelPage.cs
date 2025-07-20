@@ -5,44 +5,44 @@ using UnityEngine.UI;
 using DanielLochner.Assets.SimpleScrollSnap;
 using UnityScreenNavigator.Runtime.Core.Page;
 
-public class LevelPage_09 : Page
+public class LevelPage : Page
 {
     [Header("ScrollSnap & Pagination")]
-    [SerializeField] private SimpleScrollSnap _scrollSnap;
-    [SerializeField] private DynamicContent _dynamic;
-
+    [SerializeField] private SimpleScrollSnap scrollSnap;
+    [SerializeField] private DynamicContent dynamic;
+    
     [Header("Panel & Level Button Prefabs")]
-    [SerializeField] private GameObject _panelPrefab;
-    [SerializeField] private GameObject _levelButtonPrefab;
-
+    [SerializeField] private GameObject panelPrefab;
+    [SerializeField] private GameObject levelButtonPrefab;
+    
     [Header("Layout Settings")]
-    [SerializeField] private int _ROW = 2;
-    [SerializeField] private int _COLUMN = 6;
-    private int pageSize => _ROW * _COLUMN;
-
+    [SerializeField] private int row = 2;
+    [SerializeField] private int column = 6;
+    private int PageSize => row * column;
+    
     [Header("UI")]
-    [SerializeField] private Button _backBtn;
-    [SerializeField] private Button _taskBtn;
+    [SerializeField] private Button backBtn;
+    [SerializeField] private Button taskBtn;
 
     [Header("Effect")]
     [SerializeField] private float spawnButtonDelay = 0.07f; 
 
     private int _totalLevel;
     private int _totalPage;
-    private Dictionary<int, Transform> _pageContents = new Dictionary<int, Transform>();
+    private readonly Dictionary<int, Transform> _pageContents = new Dictionary<int, Transform>();
 
     public override IEnumerator Initialize()
     {
-        if (_backBtn != null)
+        if (backBtn != null)
         {
-            _backBtn.onClick.RemoveAllListeners();
-            _backBtn.onClick.AddListener(OnBackClicked);
+            backBtn.onClick.RemoveAllListeners();
+            backBtn.onClick.AddListener(OnBackClicked);
         }
 
-        if (_taskBtn != null)
+        if (taskBtn != null)
         {
-            _taskBtn.onClick.RemoveAllListeners();
-            _taskBtn.onClick.AddListener(OnTaskSelected);
+            taskBtn.onClick.RemoveAllListeners();
+            taskBtn.onClick.AddListener(OnTaskSelected);
         }
 
         yield break;
@@ -51,20 +51,20 @@ public class LevelPage_09 : Page
     public void SetupWithMode(ModePageSoData.Mode mode)
     {
         _totalLevel = mode.totalLevel;
-        _totalPage = Mathf.CeilToInt((float)_totalLevel / pageSize);
+        _totalPage = Mathf.CeilToInt((float)_totalLevel / PageSize);
 
         for (int i = 0; i < _totalPage; i++)
         {
-            var panelGO = _dynamic.Add(i);
-            if (panelGO == null)
+            var panelGo = dynamic.Add(i);
+            if (panelGo == null)
             {
                 Debug.LogError("Không lấy được panel từ _dynamic.Add(i)!");
                 continue;
             }
-            var content = panelGO.transform.Find("Content");
+            var content = panelGo.transform.Find("Content");
             if (content == null)
             {
-                Debug.LogError($"Panel {panelGO.name} không có child 'Content'!");
+                Debug.LogError($"Panel {panelGo.name} không có child 'Content'!");
                 continue;
             }
             _pageContents[i] = content;
@@ -72,7 +72,7 @@ public class LevelPage_09 : Page
 
         for(int i = 0; i < _totalPage;i++) StartCoroutine(SpawnLevelItems(i));
 
-        _scrollSnap.GoToPanel(0);
+        scrollSnap.GoToPanel(0);
     }
 
     private IEnumerator SpawnLevelItems(int panelIndex)
@@ -83,13 +83,13 @@ public class LevelPage_09 : Page
             yield break;
         }
 
-        int start = panelIndex * pageSize;
-        int end = Mathf.Min(start + pageSize, _totalLevel);
+        int start = panelIndex * PageSize;
+        int end = Mathf.Min(start + PageSize, _totalLevel);
 
         for (int i = start; i < end; i++)
         {
-            var go = Instantiate(_levelButtonPrefab, content);
-            var item = go.GetComponent<LevelItem_09>();
+            var go = Instantiate(levelButtonPrefab, content);
+            var item = go.GetComponent<LevelItem>();
             if (item == null)
             {
                 Debug.LogError("Prefab _levelButtonPrefab không có component LevelItem_09!");
@@ -98,10 +98,10 @@ public class LevelPage_09 : Page
             item.Init(i);
 
             int idx = i;
-            if (item._button != null)
+            if (item.button != null)
             {
-                item._button.onClick.RemoveAllListeners();
-                item._button.onClick.AddListener(() => OnLevelClicked(idx));
+                item.button.onClick.RemoveAllListeners();
+                item.button.onClick.AddListener(() => OnLevelClicked(idx));
             }
             else
             {

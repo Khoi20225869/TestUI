@@ -3,19 +3,22 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/Key Data")]
 public class KeySave : ScriptableObject
 {
-    private static KeySave instance;
+    private static KeySave _instance;
 
     public static KeySave Instance
     {
         get
         {
-            if(instance == null)
-                instance = Resources.Load("Key") as KeySave;
+            if(_instance == null)
+                _instance = Resources.Load("Key") as KeySave;
 
-            return instance;
+            return _instance;
         }
     }
-    [Header("PlayerPrefs Save/Load Keys")]
+
+    [Header("PlayerPrefs Save/Load Keys")] 
+    public string playerPrefsPlayerSelectedCar = "SelectedCar";
+    public string playerPrefsPlayerCustomize = "Customize";
     public string playerPrefsPlayerMoney = "Money";
     public string playerPrefsPlayerVehicle = "Vehicle";
     public string playerPrefsPlayerVehicleUnlock = "VehicleUnlock";
